@@ -1,3 +1,4 @@
+require 'bunny'
 require 'ostruct'
 
 # Overriding the Bunny gem's modules and classes.
