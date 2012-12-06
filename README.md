@@ -59,8 +59,6 @@ class SomeTest < TestUnit::TestCase
 
   def teardown
     StuffedBunny.reset!
-    
-    @bunny = Bunny::Client.new
   end
 
 end
