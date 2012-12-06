@@ -1,5 +1,4 @@
 require 'bunny'
-require 'ostruct'
 
 # Overriding the Bunny gem's modules and classes.
 #
@@ -41,7 +40,7 @@ module Bunny
       @type = options[:type]
     end
 
-    # To facilite testing this adds an OpenStruct containing the data
+    # To facilite testing this adds a Struct containing the data
     # +message+ and routing +key+ to the +routed_messages+.
     #
     # Example usage:
@@ -57,8 +56,7 @@ module Bunny
     # assert_equal "some message", routed_message.message
     # assert_equal "some.routing.key", routed_message.key
     def publish(data, options = {})
-      @routed_messages << OpenStruct.new(:message => data,
-                                         :key => options[:key])
+      @routed_messages << Struct.new(:message, :key).new(data, options[:key])
     end
   end
 end
