@@ -26,4 +26,10 @@ describe Bunny do
       @client.exchanges.must_be_empty
     end
   end
+
+  describe 'on .queue' do
+    it 'returns a new queue with default options' do
+      @client.queue( "queue", passive: true ).must_be_instance_of Bunny::Queue
+    end
+  end
 end

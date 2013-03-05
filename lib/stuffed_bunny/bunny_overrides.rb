@@ -29,6 +29,10 @@ module Bunny
     def exchanges
       @@exchanges
     end
+
+    def queue(queue_name, options=nil)
+      Bunny::Queue.new
+    end
   end
 
   class Exchange
@@ -57,6 +61,12 @@ module Bunny
     # assert_equal "some.routing.key", routed_message.key
     def publish(data, options = {})
       @routed_messages << Struct.new(:message, :key).new(data, options[:key])
+    end
+  end
+
+  class Queue
+    def delete(*args)
+      :delete_ok
     end
   end
 end
