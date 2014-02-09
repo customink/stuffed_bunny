@@ -31,7 +31,7 @@ module Bunny
     end
 
     def queue(queue_name, options=nil)
-      Bunny::Queue.new
+      Bunny::Queue.new nil
     end
   end
 
@@ -65,6 +65,8 @@ module Bunny
   end
 
   class Queue
+    def initialize(channel_or_connection, name = nil, opts = {})
+    end
     def delete(*args)
       :delete_ok
     end

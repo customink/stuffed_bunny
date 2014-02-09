@@ -2,7 +2,7 @@ require_relative 'spec_helper'
 
 describe Bunny::Queue do
   before do
-    @queue = Bunny::Queue.new
+    @queue = Bunny::Queue.new nil
   end
 
   describe 'on .delete' do
