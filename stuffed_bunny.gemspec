@@ -18,5 +18,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_development_dependency 'bunny', '~> 0.8'
-  gem.add_development_dependency 'rake',  '10.0.3'
+  gem.add_development_dependency 'rake'
 end
