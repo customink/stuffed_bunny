@@ -5,7 +5,5 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'bundler/setup'
 require 'minitest/autorun'
-require 'minitest/reporters'
+require 'minitest/pride'
 require 'stuffed_bunny'
-
-MiniTest::Reporters.use! MiniTest::Reporters::ProgressReporter.new
