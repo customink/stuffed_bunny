@@ -36,12 +36,15 @@ module Bunny
   end
 
   class Exchange
-    attr_accessor :client, :type, :name, :routed_messages
+    attr_accessor :client, :type, :name
 
     def initialize(client, name, options = {})
       @client, @name  = client, name
-      @routed_messages = []
       @type = options[:type]
+    end
+    
+    def routed_messages
+      @routed_messaged ||= []  
     end
 
     # To facilite testing this adds a Struct containing the data
@@ -60,7 +63,7 @@ module Bunny
     # assert_equal "some message", routed_message.message
     # assert_equal "some.routing.key", routed_message.key
     def publish(data, options = {})
-      @routed_messages << Struct.new(:message, :key).new(data, options[:key])
+      routed_messages << Struct.new(:message, :key).new(data, options[:key])
     end
   end
 
