@@ -2,8 +2,7 @@ require 'bunny'
 
 # Overriding the Bunny gem's modules and classes.
 #
-# NOTE: Not everything is stubbed yet.  We've only stubbed the method calls we
-# are using in our projects.
+# NOTE: Not everything in Bunny is stubbed here. Pull requests are welcome.
 module Bunny
   def self.run(options = {})
     bunny = Bunny::Client.new(options)
@@ -42,9 +41,9 @@ module Bunny
       @client, @name  = client, name
       @type = options[:type]
     end
-    
+
     def routed_messages
-      @routed_messaged ||= []  
+      @routed_messaged ||= []
     end
 
     # To facilite testing this adds a Struct containing the data
@@ -52,8 +51,8 @@ module Bunny
     #
     # Example usage:
     # Bunny.run do |b|
-    #   topic = b.exchange("some_topic_name", MH::Exchange::OPTIONS)
-    #   options = { :key => "some.routing.key" }.merge(MH::Exchange::PUBLISH_OPTIONS)
+    #   topic = b.exchange("some_topic_name", SOME_EXCHANGE_OPTIONS)
+    #   options = { :key => "some.routing.key" }.merge(SOME_PUBLISH_OPTIONS)
     #   topic.publish("some message", options)
     # end
     #
@@ -70,6 +69,7 @@ module Bunny
   class Queue
     def initialize(channel_or_connection, name = nil, opts = {})
     end
+
     def delete(*args)
       :delete_ok
     end
