@@ -19,38 +19,7 @@ Or install it yourself as:
 
     $ gem install stuffed_bunny
 
-## Usage
-
-### RSpec Example
-
-```ruby
-# spec/spec_helper.rb
-require 'stuffed_bunny'
-
-RSpec.configure do |config|
-
-  config.after(:each) do
-    StuffedBunny.reset!
-  end
-
-end
-```
-
-### Minitest Example
-
-```ruby
-require 'stuffed_bunny'
-
-class MiniTest::Spec
-
-  after :each do
-    StuffedBunny.reset!
-  end
-
-end
-```
-
-### TestUnit Example
+## Example Usage
 
 ```ruby
 require 'stuffed_bunny'
