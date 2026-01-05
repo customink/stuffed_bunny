@@ -1,5 +1,7 @@
 # StuffedBunny
 
+[![Overall](https://img.shields.io/endpoint?style=flat&url=https://app.opslevel.com/api/service_level/D96BNWNB8rTZoiy2qZyelNVhOUccQFAA08_4UN_AN9w)](https://app.opslevel.com/services/stuffed_bunny/maturity-report)
+
 Provides stubbing of the Bunny gem to faciliate testing.
 
 A `routed_messages` array captures any publised messages on a topic exchange.
