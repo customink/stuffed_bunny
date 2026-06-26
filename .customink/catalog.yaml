@@ -1,4 +1,7 @@
-name: stuffed_bunny
+name: stuffed-bunny
+
+aliases:
+  - stuffed_bunny # preserve original OpsLevel identifier/URL after kebab-case rename
 
 owner: premium-blend # team definitions at https://app.opslevel.com/teams
 
