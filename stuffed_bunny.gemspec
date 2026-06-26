@@ -19,4 +19,8 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency 'bunny', '~> 0.8', '<= 1.4.1'
   gem.add_development_dependency 'rake'
+  # Pinned to 5.x: the specs use minitest's classic global expectations
+  # (must_equal, must_be_kind_of, ...) which were removed in minitest 6.
+  # minitest is also no longer a default gem as of Ruby 3.4, so declare it.
+  gem.add_development_dependency 'minitest', '~> 5'
 end
